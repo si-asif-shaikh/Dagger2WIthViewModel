@@ -1,6 +1,7 @@
 package com.gaming.dagger2.di
 
 import android.content.Context
+import androidx.lifecycle.ViewModelProvider
 import com.gaming.dagger2.MainActivity
 import com.gaming.dagger2.MyFragment
 import dagger.Component
@@ -15,4 +16,6 @@ interface AppComponent{
 
     // Expose `Context` if needed elsewhere
     fun applicationContext(): Context
+
+    fun viewModelFactory(): ViewModelProvider.Factory
 }

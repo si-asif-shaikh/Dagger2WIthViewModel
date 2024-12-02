@@ -31,6 +31,12 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion libs.versions.compose.compiler.get()
+    }
 }
 
 dependencies {
@@ -52,4 +58,14 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1"
     implementation "com.google.dagger:dagger:2.46.1"
     kapt "com.google.dagger:dagger-compiler:2.46.1"
+
+    // Compose dependencies
+    implementation platform(libs.compose)
+    implementation(libs.compose.material)
+    implementation(libs.compose.material3)
+    implementation(libs.livedata)
+    implementation(libs.compose.preview)
+    implementation(libs.compose.viewmodel)
+    debugImplementation(libs.compose.ui)
+
 }

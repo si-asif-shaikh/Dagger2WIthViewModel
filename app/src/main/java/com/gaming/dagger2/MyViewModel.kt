@@ -12,4 +12,6 @@ class MyViewModel @Inject constructor(
     fun printSomething(){
         someDependency.invoke()
     }
+
+    fun getGreeting(): String = someDependency.greet()
 }

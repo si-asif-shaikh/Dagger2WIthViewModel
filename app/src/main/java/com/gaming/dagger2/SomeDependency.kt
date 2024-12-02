@@ -7,4 +7,6 @@ class SomeDependency @Inject constructor() {
     fun invoke(){
         Log.d("MyViewModel","Something")
     }
+
+    fun greet() = "Hello World!!"
 }
