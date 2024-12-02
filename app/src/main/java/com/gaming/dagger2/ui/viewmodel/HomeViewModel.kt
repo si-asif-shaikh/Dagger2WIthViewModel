@@ -1,5 +1,6 @@
 package com.gaming.dagger2.ui.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.gaming.dagger2.SomeDependency
@@ -27,4 +28,9 @@ class HomeViewModel @Inject constructor(
     }
 
     fun getGreeting(): String = someDependency.greet()
+
+    override fun onCleared() {
+        Log.d("ViewModel","HomeCleared")
+        super.onCleared()
+    }
 }

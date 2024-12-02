@@ -1,5 +1,6 @@
 package com.gaming.dagger2.ui.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.gaming.dagger2.ui.nav.Navigator
@@ -14,5 +15,10 @@ class DetailsViewModel @Inject constructor(
         viewModelScope.launch {
             navigator.navigateUp()
         }
+    }
+
+    override fun onCleared() {
+        Log.d("ViewModel","DetailCleared")
+        super.onCleared()
     }
 }

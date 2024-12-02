@@ -1,5 +1,6 @@
 package com.gaming.dagger2.ui.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.gaming.dagger2.ui.Destination
@@ -22,5 +23,10 @@ class LoginViewModel @Inject constructor(
                 }
             )
         }
+    }
+
+    override fun onCleared() {
+        Log.d("ViewModel","LoginCleared")
+        super.onCleared()
     }
 }
