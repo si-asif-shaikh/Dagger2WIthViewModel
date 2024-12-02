@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     id 'kotlin-kapt'
+    alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.jetbrains.kotlin.serialization)
 }
 
 android {
@@ -65,7 +67,12 @@ dependencies {
     implementation(libs.compose.material3)
     implementation(libs.livedata)
     implementation(libs.compose.preview)
-    implementation(libs.compose.viewmodel)
     debugImplementation(libs.compose.ui)
+
+    // Integration with ViewModels
+    implementation(libs.viewmodel)
+    implementation(libs.navigation)
+    implementation(libs.kotlinx.serialization.json)
+
 
 }
